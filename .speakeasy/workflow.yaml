@@ -1,0 +1,11 @@
+workflowVersion: 1.0.0
+sources:
+    se-OAS:
+        inputs:
+            - location: ../openapi/cps/Enrollments.json
+        registry:
+            location: registry.speakeasyapi.dev/akamai/gss/se-oas
+targets:
+    se:
+        target: python
+        source: se-OAS
