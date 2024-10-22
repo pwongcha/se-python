@@ -84,6 +84,7 @@ class Se(BaseSDK):
         )
 
         hooks = SDKHooks()
+        self.sdk_configuration.get_hooks()._hooks = hooks
 
         current_server_url, *_ = self.sdk_configuration.get_server_details()
         server_url, self.sdk_configuration.client = hooks.sdk_init(

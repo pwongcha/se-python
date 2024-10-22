@@ -74,3 +74,16 @@ class SDKHooks(Hooks):
                 raise result
             response, error = result
         return response, error
+
+
+class AuthCheckBeforeRequestHook(BeforeRequestHook):
+    def before_request(
+        self, hook_ctx: BeforeRequestContext, request: httpx.Request
+    ) -> httpx.Request:
+        if 'Authorization' not in request.headers:
+            raise ValueError("Authorization header missing in the request!")
+
+        # Optionally log the presence of the Authorization header
+        print(f"Authorization header present: {request.headers['Authorization']}")
+
+        return request
