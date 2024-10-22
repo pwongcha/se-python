@@ -998,7 +998,7 @@ class GetEnrollmentResponseBody(BaseModel):
     ] = UNSET
     r"""The kind of certificate trust chain. This is either `default` or `symantec1kroot`."""
 
-    id: OptionalNullable[str] = UNSET
+    id: OptionalNullable[str|int] = UNSET
     r"""The unique identifier of the enrollment."""
 
     location: OptionalNullable[str] = UNSET

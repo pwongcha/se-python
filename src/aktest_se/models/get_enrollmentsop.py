@@ -738,6 +738,7 @@ class GetEnrollmentsRa(str, Enum):
     SYMANTEC = "symantec"
     LETS_ENCRYPT = "lets-encrypt"
     THIRD_PARTY = "third-party"
+    GEOTRUST = "geotrust"
 
 
 class GetEnrollmentsSignatureAlgorithm(str, Enum):
@@ -989,7 +990,7 @@ class GetEnrollmentsEnrollments(BaseModel):
     ] = UNSET
     r"""The kind of certificate trust chain. This is either `default` or `symantec1kroot`."""
 
-    id: OptionalNullable[str] = UNSET
+    id: OptionalNullable[str|int] = UNSET
     r"""The unique identifier of the enrollment."""
 
     location: OptionalNullable[str] = UNSET
